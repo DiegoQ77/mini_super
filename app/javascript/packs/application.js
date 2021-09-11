@@ -8,9 +8,13 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('admin-lte');
+require('datatables.net-bs4')
+import $ from 'jquery';
+global.$ = jQuery;
 import 'bootstrap';
 import '../stylesheets/application';
 import "@fortawesome/fontawesome-free/js/all";
+
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
 });
