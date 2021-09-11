@@ -16,7 +16,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Bienvenido al sistema de Invetario Mini Super Killman</h1>
+              <h1 class="m-0 text-dark">Control de inventario</h1>
             </div>
             <!-- /.col -->
             <div class="col-sm-6">
@@ -24,6 +24,16 @@
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active">Starter Page</li>
               </ol>
+              <p class="navbar-text float-right">
+                <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <% else %>
+                  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                <% end %>
+              </p>
             </div>
             <!-- /.col -->
           </div>
@@ -34,5 +44,11 @@
       <div class="content container-fluid">
         <div class="container-fluid">
           <%= yield %>
-        </body>
-      </html>
+        </div>
+      </div>
+    </div>
+    <%= render "base/footer" %>
+    <%= render "base/control_sidebar" %>
+    <div>
+    </body>
+  </html>

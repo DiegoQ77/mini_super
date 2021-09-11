@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :providers
   resources :products
   devise_for :users
   devise_scope :users do
