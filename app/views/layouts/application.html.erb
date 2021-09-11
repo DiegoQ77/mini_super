@@ -8,6 +8,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body data-scrollbar-auto-hide="n" class="hold-transition sidebar-mini layout-fixed">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="wrapper">
       <%= render "base/header" %>
       <%= render "base/sidebar" %>
