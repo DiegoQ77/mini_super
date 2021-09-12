@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   
-  resources :providers
-  resources :products
+  resources :providers 
+
+  resources :products do
+    collection do 
+      get :list
+    end
+  end
   devise_for :users
   devise_scope :users do
     authenticated :user do

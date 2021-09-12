@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Codigo Barra:</strong>
+  <strong>Código Barra:</strong>
   <%= @product.code %>
 </p>
 <p>
@@ -29,3 +29,6 @@
 </p>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+<p>
+  <%= link_to 'Registrar Nuevo Producto', new_product_path %>
+</p>
