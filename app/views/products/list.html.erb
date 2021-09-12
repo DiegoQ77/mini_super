@@ -1,0 +1,66 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Precio de productos</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered" id='table'>
+              <thead>
+                <tr>
+                  <th>Código de Barra</th>
+                  <th>Nombre Producto</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%@products.each do |p|%>
+                  <tr>
+                    <td><%=p.code%></td>
+                    <td><%=p.name%></td>
+                    <td><strong class=""><%=p.sale_price%> Bs.</strong></td>
+                  </tr>
+                <%end%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<script type="text/javascript">
+  // document.body.innerHTML = '';
+  
+  $(document).ready(function() {
+    $('#table').DataTable({
+      "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        },
+        "bDestroy": true,
+        'pageLength': 25,
+        'lengthChange': false
+    }
+    );
+  });
+</script>
+<style>
+  .dataTables_filter {
+     width: 50%;
+     float: right;
+     text-align: right;
+  }
+  
+  ul.pagination {
+     display: flex;
+  justify-content: center;
+  }
+</style>

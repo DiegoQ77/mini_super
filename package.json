@@ -9,6 +9,8 @@
     "@rails/webpacker": "4.3.0",
     "admin-lte": "^3.0",
     "bootstrap": "4.3.1",
+    "datatables.net-bs4": "^1.11.2",
+    "imports-loader": "^3.0.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
